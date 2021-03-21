@@ -1,0 +1,27 @@
+[debug] [2021-03-21T14:47:57.237Z] ----------------------------------------------------------------------
+[debug] [2021-03-21T14:47:57.239Z] Command:       /usr/local/Cellar/node/14.10.1/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2021-03-21T14:47:57.239Z] CLI Version:   9.6.1
+[debug] [2021-03-21T14:47:57.239Z] Platform:      darwin
+[debug] [2021-03-21T14:47:57.239Z] Node Version:  v14.10.1
+[debug] [2021-03-21T14:47:57.241Z] Time:          Sun Mar 21 2021 19:47:57 GMT+0500 (Yekaterinburg Standard Time)
+[debug] [2021-03-21T14:47:57.241Z] ----------------------------------------------------------------------
+[debug] [2021-03-21T14:47:57.241Z] 
+[debug] [2021-03-21T14:47:57.250Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-21T14:47:57.250Z] > authorizing via signed-in user
+[debug] [2021-03-21T14:47:57.250Z] [iam] checking project javascriptbot-308206 for permissions ["firebase.projects.get"]
+[debug] [2021-03-21T14:47:57.252Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-03-21T14:47:57.253Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-21T14:47:57.809Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 21 Mar 2021 14:47:57 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-21T14:47:57.846Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/javascriptbot-308206:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-03-21T14:47:59.016Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 21 Mar 2021 14:47:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=835","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-21T14:47:59.022Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:122:11)
+    at Object.join (path.js:1039:7)
+    at FunctionsServer.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:20:35)
+    at Command.module.exports [as actionFn] (/usr/local/lib/node_modules/firebase-tools/lib/functionsShellCommandAction.js:31:10)
+    at /usr/local/lib/node_modules/firebase-tools/lib/command.js:163:25
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.

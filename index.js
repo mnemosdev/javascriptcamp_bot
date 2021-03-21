@@ -1,14 +1,8 @@
 /* eslint-disable indent */
-const functions = require('firebase-functions')
 const { Telegraf, session, Stage, BaseScene } = require('telegraf')
 const { level, getSticker, MyContext } = require('./helpers')
 const questions = require('./questions')
-let config = require('./env.json')
-
-if (Object.keys(functions.config()).length) {
-  // eslint-disable-next-line no-unused-vars
-  config = functions.config()
-}
+const config = require('./env.json')
 
 const bot = new Telegraf(config.service.telegram_key, { contextType: MyContext })
 
@@ -60,17 +54,4 @@ bot.use(stage.middleware())
 bot.command('start', ctx => ctx.scene.enter('js-room'))
 bot.launch()
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  bot.catch(err => functions.logger.info(`Error: ${err}`, { structuredData: true }))
-
-  response.send('JavaScriptBot by https://www.jscamp.app')
-})
-
-// const scene2 = new WizardScene('scene2', ctx => {
-//   ctx.reply(`${getSticker(ctx.session.counter)}`)
-//   ctx.reply(`Ваш счет: ${ctx.session.counter}. Уровень: ${level(ctx.session.counter)}`)
-// })
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
+bot.catch(err => functions.logger.info(`Error: ${err}`, { structuredData: true }))
