@@ -1,4 +1,4 @@
-const questions = [
+const questionsRu = [
   {
     id: 0,
     title:
@@ -1380,4 +1380,4 @@ const questions = [
   }
 ]
 
-module.exports = questions
+module.exports = questionsRu

@@ -4,7 +4,8 @@ const { Telegraf, session, Stage, BaseScene } = require('telegraf')
 const TelegrafI18n = require('telegraf-i18n')
 const path = require('path')
 const { level, getSticker, MyContext } = require('./helpers')
-const questions = require('./questionsRu')
+const questionsRu = require('./questionsRu')
+const questionsEn = require('./questionsEn')
 let config = require('./env.json')
 
 if (Object.keys(functions.config()).length) {
@@ -30,6 +31,9 @@ jsRoom.enter(ctx => {
   ctx.session.counter = counter
   ctx.session.questionIndex = questionIndex
 
+  const lang = ctx.i18n.locale()
+  const questions = lang === 'en' ? questionsEn : questionsRu
+
   const { title, random, correct_option_id } = questions[questionIndex]
 
   ctx.replyWithQuiz(`Вопрос: 1 из ${questions.length}\n${title}`, random, {
@@ -39,6 +43,9 @@ jsRoom.enter(ctx => {
 })
 
 jsRoom.on('poll_answer', ctx => {
+  const lang = ctx.i18n.locale()
+  const questions = lang === 'en' ? questionsEn : questionsRu
+
   const questionIndex = ++ctx.session.questionIndex
   const result = questions[questionIndex - 1].correct_option_id === ctx.pollAnswer.option_ids[0]
   result && ++ctx.session.counter
@@ -59,7 +66,8 @@ jsRoom.on('poll_answer', ctx => {
 })
 
 const stage = new Stage([jsRoom])
-bot.context.questions = questions
+
+bot.context.questions = questionsEn
 
 bot.use(session())
 
@@ -68,7 +76,7 @@ bot.use((ctx, next) => {
 })
 bot.use(stage.middleware())
 bot.command('start', ctx => ctx.scene.enter('js-room'))
-bot.launch()
+// bot.launch()
 
 exports.echoBot = functions.https.onRequest(async (request, response) => {
   functions.logger.log('Incoming message', request.body)

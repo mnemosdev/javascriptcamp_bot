@@ -24,9 +24,11 @@
     "telegraf": "3.38",
     "telegraf-aws": "^1.0.0",
     "telegraf-better-stage": "^1.0.1",
+    "telegraf-i18n": "^6.6.0",
     "telegraf-session-firestore": "3"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-google": "^0.14.0",

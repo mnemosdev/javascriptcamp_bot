@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
+  parser: 'babel-eslint',
   extends: ['eslint:recommended', 'google'],
   rules: {
     'no-param-reassign': 0,
