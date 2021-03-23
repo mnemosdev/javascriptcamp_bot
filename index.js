@@ -1,22 +1,16 @@
 /* eslint-disable indent */
 require('dotenv').config()
 const { Telegraf, session, Stage, BaseScene } = require('telegraf')
-const express = require('express')
-
+// const TelegrafI18n = require('telegraf-i18n')
 const { level, getSticker, MyContext } = require('./helpers')
 const questions = require('./questions')
+// const path = require('path')
 
-const expressApp = express()
-
-const port = process.env.PORT || 3000
-
-expressApp.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-expressApp.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Listening on port ${port}`)
-})
+// const i18n = new TelegrafI18n({
+//   defaultLanguage: 'en',
+//   allowMissing: false, // Default true
+//   directory: path.resolve(__dirname, 'locales')
+// })
 
 const bot = new Telegraf(process.env.BOT_TOKEN, { contextType: MyContext })
 
