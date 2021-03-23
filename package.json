@@ -13,10 +13,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "telegraf": "3.38",
-    "telegraf-aws": "^1.0.0",
-    "telegraf-better-stage": "^1.0.1",
-    "telegraf-session-firestore": "3"
+    "telegraf": "3.38"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
@@ -25,7 +22,6 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "firebase-functions-test": "^0.2.0",
     "prettier": "^2.2.1"
   },
   "private": true
