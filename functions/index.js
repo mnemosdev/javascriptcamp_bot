@@ -68,12 +68,10 @@ bot.use((ctx, next) => {
 })
 bot.use(stage.middleware())
 bot.command('start', ctx => ctx.scene.enter('js-room'))
-bot.launch()
+// bot.launch()
 
 exports.echoBot = functions.https.onRequest(async (request, response) => {
-  functions.logger.log('Incoming message', request.body)
-  return await bot.handleUpdate(request.body, response).then(rv => {
-    // if it's not a request from the telegram, rv will be undefined, but we should respond with 200
-    return !rv && response.sendStatus(200)
-  })
+  functions.logger.log('Incoming message', { body: request.body })
+  await bot.handleUpdate(request.body, response)
+  return response.sendStatus(200)
 })
