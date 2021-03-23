@@ -53,5 +53,3 @@ bot.use((ctx, next) => {
 bot.use(stage.middleware())
 bot.command('start', ctx => ctx.scene.enter('js-room'))
 bot.launch()
-
-bot.catch(err => functions.logger.info(`Error: ${err}`, { structuredData: true }))

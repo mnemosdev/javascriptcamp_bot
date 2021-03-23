@@ -695,6 +695,11 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
+dotenv@^6.0.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
+  integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
+
 duplexify@^4.0.0, duplexify@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-4.1.1.tgz#7027dc374f157b122a8ae08c2d3ea4d2d953aa61"
@@ -1731,6 +1736,15 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
+micro-bot@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/micro-bot/-/micro-bot-2.5.3.tgz#56eac8271f2f8bd9530341aabde36d6253d98d1a"
+  integrity sha512-64sh5hw3AOgWJ4DYgpSGuyhH/TDVm0S3rLxGMB+rFPyPL/urGloMDXr+KM2+TfAUnnXncnD297vBselwLXCXtw==
+  dependencies:
+    dotenv "^6.0.0"
+    minimist "^1.2.0"
+    telegraf "^3.25.4"
+
 mime-db@1.46.0, "mime-db@>= 1.43.0 < 2":
   version "1.46.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.46.0.tgz#6267748a7f799594de3cbc8cde91def349661cee"
@@ -2412,7 +2426,7 @@ telegraf-session-firestore@3:
   resolved "https://registry.yarnpkg.com/telegraf-session-firestore/-/telegraf-session-firestore-3.1.4.tgz#3b8d20fd7194100f29e06476b5e6b22ad75f3ae4"
   integrity sha512-W6aavsSLQu8Leq2TAE2H08Yj7crFtRz7zKWZEMwnEL2DJEbzBUgvCyoJCTJpSoU5SPWTd6lixvF87JGAvuJwjA==
 
-telegraf@3.38, telegraf@^3.38.0:
+telegraf@3.38, telegraf@^3.25.4, telegraf@^3.38.0:
   version "3.38.0"
   resolved "https://registry.yarnpkg.com/telegraf/-/telegraf-3.38.0.tgz#745b447547a8e6cdb626055e4d616058aaae0759"
   integrity sha512-va4VlrKWp64JrowFoZX/NPzzA6q38kvaIukVXOWFO1V+jR1G8+hCfgJy4TX8Z3rwLJzwaBEet1QhikHDRZWl3A==
