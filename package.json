@@ -6,13 +6,16 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "start": "node index"
+    "start": "node index",
+    "push": "git push heroku heroku:main"
   },
   "engines": {
     "node": "14"
   },
   "main": "index.js",
   "dependencies": {
+    "config": "^3.3.6",
+    "dotenv": "^8.2.0",
     "telegraf": "3.38"
   },
   "devDependencies": {

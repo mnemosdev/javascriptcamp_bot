@@ -1,10 +1,10 @@
 /* eslint-disable indent */
+require('dotenv').config()
 const { Telegraf, session, Stage, BaseScene } = require('telegraf')
 const { level, getSticker, MyContext } = require('./helpers')
 const questions = require('./questions')
-const config = require('./env.json')
 
-const bot = new Telegraf(config.service.telegram_key, { contextType: MyContext })
+const bot = new Telegraf(process.env.BOT_TOKEN, { contextType: MyContext })
 
 const jsRoom = new BaseScene('js-room')
 
