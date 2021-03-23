@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node index",
-    "push": "git push heroku heroku:main"
+    "deploy": "git push heroku heroku:main"
   },
   "engines": {
     "node": "14"
@@ -16,6 +16,7 @@
   "dependencies": {
     "config": "^3.3.6",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "telegraf": "3.38"
   },
   "devDependencies": {
