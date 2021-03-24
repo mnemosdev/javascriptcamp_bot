@@ -42,6 +42,7 @@ jsRoom.enter(ctx => {
     correct_option_id,
     is_anonymous: false
   })
+  ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
 })
 
 jsRoom.on('poll_answer', ctx => {
@@ -51,7 +52,7 @@ jsRoom.on('poll_answer', ctx => {
 
   if (questionIndex !== questions.length) {
     const { title, random, correct_option_id } = questions[questionIndex]
-    return ctx.replyWithQuiz(
+    ctx.replyWithQuiz(
       `${ctx.i18n.t('Question')}: ${questionIndex + 1} ${ctx.i18n.t('from')} ${questions.length}\n${title}`,
       random,
       {
@@ -63,6 +64,7 @@ jsRoom.on('poll_answer', ctx => {
     ctx.reply(
       `Ваш счет: ${ctx.session.counter}. Уровень: ${level(ctx.session.counter)} ${getSticker(ctx.session.counter)}`
     )
+    ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
   }
 
   ctx.scene.current.leave()
