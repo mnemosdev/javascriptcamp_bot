@@ -13,6 +13,7 @@ const i18n = new TelegrafI18n({
 })
 
 let BOT_TOKEN
+
 if (process.env.NODE_ENV === 'production') {
   BOT_TOKEN = process.env.BOT_TOKEN
 } else {
