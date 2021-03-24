@@ -3,8 +3,7 @@ require('dotenv').config()
 const { Telegraf, session, Stage, BaseScene } = require('telegraf')
 const TelegrafI18n = require('telegraf-i18n')
 const { level, getSticker, MyContext } = require('./helpers')
-const ru = require('./quiz/ru')
-const en = require('./quiz/en')
+const { en, ru } = require('./quiz')
 const path = require('path')
 
 const i18n = new TelegrafI18n({
@@ -19,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   BOT_TOKEN = process.env.BOT_TOKEN_TEST
 }
+
 const bot = new Telegraf(BOT_TOKEN, { contextType: MyContext })
 
 bot.use(i18n.middleware())
@@ -42,8 +42,7 @@ jsRoom.enter(ctx => {
     correct_option_id,
     is_anonymous: false
   })
-  //
-  // ctx.telegram.sendMessage(`${ctx.i18n.t('course')}: www.jscamp.app`)
+  ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
 })
 
 jsRoom.on('poll_answer', ctx => {
@@ -65,7 +64,7 @@ jsRoom.on('poll_answer', ctx => {
     ctx.reply(
       `Ваш счет: ${ctx.session.counter}. Уровень: ${level(ctx.session.counter)} ${getSticker(ctx.session.counter)}`
     )
-    // ctx.telegram.sendMessage(`${ctx.i18n.t('course')}: www.jscamp.app`)
+    ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
   }
 
   ctx.scene.current.leave()
@@ -76,9 +75,7 @@ bot.context.questions = questions
 
 bot.use(session())
 
-bot.use((ctx, next) => {
-  return next()
-})
+bot.use((ctx, next) => next())
 bot.use(stage.middleware())
 bot.command('start', ctx => ctx.scene.enter('js-room'))
 bot.launch()
