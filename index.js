@@ -42,7 +42,7 @@ jsRoom.enter(ctx => {
     correct_option_id,
     is_anonymous: false
   })
-  ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
+  // ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
 })
 
 jsRoom.on('poll_answer', ctx => {
@@ -64,7 +64,7 @@ jsRoom.on('poll_answer', ctx => {
     ctx.reply(
       `Ваш счет: ${ctx.session.counter}. Уровень: ${level(ctx.session.counter)} ${getSticker(ctx.session.counter)}`
     )
-    ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
+    // ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
   }
 
   ctx.scene.current.leave()

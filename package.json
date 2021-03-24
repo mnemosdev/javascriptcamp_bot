@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "nodemon index",
-    "deploy": "git push heroku heroku:main",
+    "push": "git push heroku heroku:main",
     "logs": "heroku logs -a javascriptcampbot -t"
   },
   "engines": {
