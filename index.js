@@ -55,7 +55,7 @@ jsRoom.on('poll_answer', ctx => {
     ctx.replyWithQuiz(
       `${ctx.i18n.t('Question')}: ${questionIndex + 1} ${ctx.i18n.t('from')} ${
         questions.length
-      }\n${title}\n${ctx.i18n.t('score')}: ${ctx.session.counter}`,
+      }\n${title}\n${ctx.i18n.t('score')} ${ctx.session.counter}`,
       random,
       {
         correct_option_id,
@@ -64,7 +64,7 @@ jsRoom.on('poll_answer', ctx => {
     )
   } else {
     ctx.reply(
-      `${ctx.i18n.t('score')}: ${ctx.session.counter}. ${ctx.i18n.t('level')}: ${level(
+      `${ctx.i18n.t('score')} ${ctx.session.counter}. ${ctx.i18n.t('level')}: ${level(
         ctx.session.counter
       )} ${getSticker(ctx.session.counter)}`
     )

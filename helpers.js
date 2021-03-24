@@ -43,7 +43,7 @@ const level = x => {
       str = 'Senior'
       break
     default:
-      str = 'Что то пошло не так'
+      str = 'Woops..'
   }
   return str
 }
@@ -55,13 +55,13 @@ const getSticker = x => {
       str = '👶🏼'
       break
     case x < 150:
-      str = '🤓'
+      str = '😎'
       break
     case x < 190:
-      str = '🧑🏻‍🎓'
+      str = '👨🏻‍🎓'
       break
     default:
-      str = 'Что то пошло не так'
+      str = 'Woops..'
   }
   return str
 }
