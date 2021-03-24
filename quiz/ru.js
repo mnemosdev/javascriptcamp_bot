@@ -309,9 +309,9 @@ const ru = [
   {
     id: 42,
     title: 'Выберете «символ перевода строки»',
-    answer: '\n',
+    answer: '\\n',
     correct_option_id: 0,
-    random: ['\n', '\\', '\\*']
+    random: ['\\n', '\\', '\\*']
   },
   {
     id: 43,
