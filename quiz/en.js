@@ -1,7 +1,7 @@
 const en = [
   {
     id: 0,
-    title: 'What URL (address) do I need to enter into Chrome`s address bar to open a completely blank browser tab?',
+    title: 'What URL (address) do I need to enter into Chrome address bar to open a completely blank browser tab?',
     answer: 'about:blank',
     correct_option_id: 1,
     random: ['about:add', 'about:blank', 'about:new']
