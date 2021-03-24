@@ -42,6 +42,7 @@ jsRoom.enter(ctx => {
     correct_option_id,
     is_anonymous: false
   })
+  //
   // ctx.telegram.sendMessage(`${ctx.i18n.t('course')}: www.jscamp.app`)
 })
 
