@@ -53,7 +53,9 @@ jsRoom.on('poll_answer', ctx => {
   if (questionIndex !== questions.length) {
     const { title, random, correct_option_id } = questions[questionIndex]
     ctx.replyWithQuiz(
-      `${ctx.i18n.t('Question')}: ${questionIndex + 1} ${ctx.i18n.t('from')} ${questions.length}\n${title}`,
+      `${ctx.i18n.t('Question')}: ${questionIndex + 1} ${ctx.i18n.t('from')} ${
+        questions.length
+      }\n${title}\n${ctx.i18n.t('score')}: ${ctx.session.counter}`,
       random,
       {
         correct_option_id,
@@ -62,7 +64,9 @@ jsRoom.on('poll_answer', ctx => {
     )
   } else {
     ctx.reply(
-      `Ваш счет: ${ctx.session.counter}. Уровень: ${level(ctx.session.counter)} ${getSticker(ctx.session.counter)}`
+      `${ctx.i18n.t('score')}: ${ctx.session.counter}. ${ctx.i18n.t('level')}: ${level(
+        ctx.session.counter
+      )} ${getSticker(ctx.session.counter)}`
     )
     ctx.reply(`${ctx.i18n.t('course')}: www.jscamp.app`)
   }
